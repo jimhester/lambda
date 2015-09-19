@@ -1,0 +1,40 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+Lambda contains only one function `f()`, which allows you to write new
+functions in a very compact format.
+
+Simply write the body of the function as you would normally.  If you want a
+given variable to appear as one of the arguments to the function, surround it with
+`.()`.  Default arguments can be also be specified within `.()` as you normally
+would in the argument list.
+
+
+```{r}
+library(lambda)
+
+function(x, y) x + y
+f(.(x) + .(y))
+
+Reduce(f(.(x) + .(y)), 1:10)
+
+add <- f(.(x) + .(y = 5))
+add
+
+add(1)
+
+add(1, 2)
+```
