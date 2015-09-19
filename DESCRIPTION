@@ -1,0 +1,11 @@
+Package: lambda
+Title: Simple anonymous functions
+Version: 0.0.0.9000
+Authors@R: person("Jim", "Hester", email = "james.f.hester@gmail.com", role = c("aut", "cre"))
+Description: Defines a function 'f()' to create anonymous functions (lambdas)
+in a very concise manner. Simply write the body of the function as you would
+normally.  If you want a given variable to appear as one of the arguments to
+the function, put it in '.()'.
+Depends: R (>= 3.3.0)
+License: MIT
+LazyData: true
