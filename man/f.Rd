@@ -15,12 +15,13 @@ f(expr, env = parent.frame())
 Function to create anonymous functions (lambdas) in a very concise manner.
 Simply write the body of the function as you would normally.  If you want a
 given variable to appear as one of the arguments to the function, put it in
-\code{.()}.
+\code{.()}.  Default arguments can be specified as you normally would in the
+argument list.
 }
 \examples{
 Reduce(f(.(x) + .(y)), 1:10)
 
-compact1 <- f(FilterNegate(is.null(.(x))))
+compact1 <- f(Filter(Negate(is.null(.(x)))))
 
 f(runif(n = rpois(1, 5), .(...)))
 }
