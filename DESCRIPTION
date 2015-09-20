@@ -6,7 +6,7 @@ Description: Defines a function 'f()' to create anonymous functions (lambdas)
   in a very concise manner. Simply write the body of the function as you would
   normally.  If you want a given variable to appear as one of the arguments to
   the function, put it in '.()'.
-Depends: R (>= 3.3.0)
+Depends: R (>= 3.2.0)
 License: MIT
 LazyData: true
 Suggests: testthat
