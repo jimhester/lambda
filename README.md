@@ -1,4 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+Lambda
+======
+
 [![Travis-CI Build Status](https://travis-ci.org/jimhester/lambda.svg?branch=master)](https://travis-ci.org/jimhester/lambda) [![Coverage Status](https://img.shields.io/codecov/c/github/jimhester/lambda/master.svg)](https://codecov.io/github/jimhester/lambda?branch=master)
 
 Lambda contains only one function `f()`, which allows you to write new functions in a very compact format.
@@ -28,3 +31,22 @@ add(1)
 add(1, 2)
 #> [1] 3
 ```
+
+It works very well as a way to compactly define simple utility functions
+
+``` r
+x <- list(1, list(NULL), 2)
+compact <- f(Filter(Negate(is.null(.(x)))))
+compact(x)
+```
+
+Or for partial function application
+
+``` r
+f1 <- f(runif(n = rpois(1, 5))
+```
+
+References
+----------
+
+For a different (better?) approach to this, see [pryr::f()](https://github.com/hadley/pryr/blob/master/R/f.r).
