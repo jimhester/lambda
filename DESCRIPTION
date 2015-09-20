@@ -9,3 +9,4 @@ Description: Defines a function 'f()' to create anonymous functions (lambdas)
 Depends: R (>= 3.3.0)
 License: MIT
 LazyData: true
+Suggests: testthat
