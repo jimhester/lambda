@@ -1,4 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Travis-CI Build Status](https://travis-ci.org/jimhester/lambda.svg?branch=master)](https://travis-ci.org/jimhester/lambda) [![Coverage Status](https://img.shields.io/codecov/c/github/jimhester/lambda/master.svg)](https://codecov.io/github/jimhester/lambda?branch=master)
+
 Lambda contains only one function `f()`, which allows you to write new functions in a very compact format.
 
 Simply write the body of the function as you would normally. If you want a given variable to appear as one of the arguments to the function, surround it with `.()`. Default arguments can be also be specified within `.()` as you normally would in the argument list.
