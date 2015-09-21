@@ -37,9 +37,8 @@ f <- function(expr, env = parent.frame()) {
   }
   body <- recurse(substitute(expr))
 
-  if (is.null(names(args))) names(args) <- rep.int("", length(args))
-
-  unnamed <- names(args) == ""
+  unnamed <- (if (!is.null(names(args))) names(args)
+              else rep.int("", length(args))) == ""
   names(args)[unnamed] <- args[unnamed]
   args[unnamed] <- list(quote(expr=))
 
