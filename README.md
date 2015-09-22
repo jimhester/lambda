@@ -36,17 +36,33 @@ It works very well as a way to compactly define simple utility functions
 
 ``` r
 x <- list(1, list(NULL), 2)
-compact <- f(Filter(Negate(is.null(.(x)))))
+compact <- f(Filter(Negate(is.null), .(x)))
+compact
+#> function (x) 
+#> Filter(Negate(is.null), x)
 compact(x)
+#> [[1]]
+#> [1] 1
+#> 
+#> [[2]]
+#> [[2]][[1]]
+#> NULL
+#> 
+#> 
+#> [[3]]
+#> [1] 2
 ```
 
 Or for partial function application
 
 ``` r
-f1 <- f(runif(n = rpois(1, 5))
+f1 <- f(runif(n = rpois(1, 5), .(...)))
+f1
+#> function (...) 
+#> runif(n = rpois(1, 5), ...)
 ```
 
 References
 ----------
 
-For a different (better?) approach to this, see [pryr::f()](https://github.com/hadley/pryr/blob/master/R/f.r).
+For a different (better?) approach to this same idea, see [pryr::f()](https://github.com/hadley/pryr/blob/master/R/f.r).
